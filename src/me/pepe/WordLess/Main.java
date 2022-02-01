@@ -4,7 +4,6 @@ import me.pepe.GameAPI.GameAPI;
 import me.pepe.GameAPI.Game.Game;
 
 public class Main {
-	private String abcedario = "";
 	public static void main(String[] args) {
 		new Main();
 	}
@@ -15,11 +14,6 @@ public class Main {
 		game.getScreenManager().registerNewScreen("win/lose", new WinLoseScreen(game.getWindows(), game));
 		game.setScreen("win/lose");
 		game.getWindows().setResizable(false);
-		new Thread() {
-			@Override
-			public void run() {
-				game.start();
-			}
-		}.start();
+		game.start();
 	}
 }
